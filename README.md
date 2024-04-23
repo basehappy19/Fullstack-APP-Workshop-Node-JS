@@ -5,6 +5,7 @@ Alert In Line Notify
 React 
 Redux
 Mui
+Toastify
 Node js
 Express JS 
 Bcryptjs
