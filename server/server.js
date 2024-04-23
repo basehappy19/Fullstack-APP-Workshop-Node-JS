@@ -6,6 +6,8 @@ const bodyParse = require('body-parser')
 const jsonwebtoken = require('jsonwebtoken')
 const { swaggerUi, swaggerSpec } = require('./Config/swaggerConfig')
 const connectDB = require('./Config/db')
+require('dotenv').config();
+
 
 
 const app = express();
@@ -31,7 +33,7 @@ app.use(bodyParse.json({limit:'10mb'}))
 // app.use('/api', (authRouter))
 
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-
+app.use('/uploads', express.static('Uploads'))
 
 // Route 3
 

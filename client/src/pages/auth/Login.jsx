@@ -55,7 +55,7 @@ export default function Login() {
   const dispatch = useDispatch();
   useEffect(() => {
     liff.init({
-      liffId: "",
+      liffId: (import.meta.env.VITE_LINE_LIFF_ID),
     });
   }, []);
 
@@ -108,6 +108,7 @@ export default function Login() {
             token: res.data.token,
           })
         );
+        toast.success("User : "+res.data.payload.user.name + " Login Successfully")
         roleRedirects(res.data.payload.user.role);
       })
       .catch((err) => console.log(err));
@@ -202,7 +203,7 @@ export default function Login() {
               </Button>
 
               <FacebookLogin
-                appId="455301273563498"
+                appId={import.meta.env.VITE_FACEBOOK_APP_ID}
                 autoLoad={false}
                 fields="name,email,picture"
                 callback={responseFacebook}

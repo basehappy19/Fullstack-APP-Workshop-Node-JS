@@ -31,6 +31,7 @@ import { login } from "./store/userSlice";
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Homepage from "./pages/Homepage";
 
 function App() {
   const dispatch = useDispatch();
@@ -68,7 +69,7 @@ function App() {
             element={
               <>
                 <Navbar />
-                <h1>Homepages</h1>
+                <Homepage />
               </>
             }
           />
