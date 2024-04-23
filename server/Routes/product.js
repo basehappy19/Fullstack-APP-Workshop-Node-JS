@@ -3,6 +3,7 @@ const router = express.Router();
 const {
   read,
   list,
+  listby,
   create,
   update,
   remove,
@@ -11,6 +12,7 @@ const { auth } = require("../Middlewares/AuthMiddlewares");
 const { upload } = require("../Middlewares/UploadMiddlewares");
 
 router.get("/product", list);
+router.post("/productby", listby);
 /**
  * @swagger
  * /api/product:

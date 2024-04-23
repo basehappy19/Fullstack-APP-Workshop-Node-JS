@@ -21,6 +21,23 @@ exports.list = async (req,res) => {
         res.status(500).send('Server Error')
     }
 }
+
+exports.listby = async (req,res) => {
+    try {
+        const { limit, sort, order } = req.body 
+
+        const producted = await Product.find({})
+        .limit(limit)
+        .sort([[sort,order]])
+        .exec();
+        res.send(producted)
+    } catch (err) {
+        console.log(err)
+        res.status(500).send('Server Error')
+    }
+}
+
+
 exports.create = async (req,res) => {
     try {
         var data = req.body
@@ -36,6 +53,7 @@ exports.create = async (req,res) => {
         res.status(500).send('Server Error')
     }
 }
+
 exports.update = async (req,res) => {
     try {
         const id = req.params.id
@@ -60,6 +78,7 @@ exports.update = async (req,res) => {
         res.status(500).send('Server Error')
     }
 }
+
 exports.remove = async (req,res) => {
     try {
         const id = req.params.id
