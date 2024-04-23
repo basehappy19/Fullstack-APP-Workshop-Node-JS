@@ -13,7 +13,7 @@ export default function Line() {
   useEffect(() => {
     const initLiff = async () => {
       try {
-        await liff.init({ liffId: "" });
+        await liff.init({ liffId: "2004703296-yQRd0reW" });
         if (liff.isLoggedIn) {
           await handleLogin();
         }

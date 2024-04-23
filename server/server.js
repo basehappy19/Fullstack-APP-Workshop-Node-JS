@@ -4,9 +4,7 @@ const morgan = require('morgan')
 const cors = require('cors')
 const bodyParse = require('body-parser')
 const jsonwebtoken = require('jsonwebtoken')
-// const productRouter = require('./Routes/product')
-// const authRouter = require('./Routes/auth')
-
+const { swaggerUi, swaggerSpec } = require('./Config/swaggerConfig')
 const connectDB = require('./Config/db')
 
 
@@ -31,6 +29,8 @@ app.use(bodyParse.json({limit:'10mb'}))
 
 // app.use('/api', (productRouter))
 // app.use('/api', (authRouter))
+
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 
 // Route 3
