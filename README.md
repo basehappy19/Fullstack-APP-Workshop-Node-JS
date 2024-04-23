@@ -1,4 +1,13 @@
-Fullstack App CRUD React Node js
-Express JS for make API
+Fullstack App CRUD 
 Login Facebook, Line
-Alert login In Line Notify
+Alert In Line Notify
+- Tool -
+React 
+Redux
+Mui
+Toastify
+Node js
+Express JS 
+Bcryptjs
+jwt
+multer

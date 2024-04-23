@@ -55,7 +55,7 @@ export default function Login() {
   const dispatch = useDispatch();
   useEffect(() => {
     liff.init({
-      liffId: "2004703296-yQRd0reW",
+      liffId: "",
     });
   }, []);
 
@@ -202,7 +202,7 @@ export default function Login() {
               </Button>
 
               <FacebookLogin
-                appId="455301273563498"
+                appId=""
                 autoLoad={false}
                 fields="name,email,picture"
                 callback={responseFacebook}

@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 const { notifyLine, getIPClient } = require('../Functions/Notify')
 
 
-const tokenLine = 'n8jieEcfdgmydfNKrGqziLkmPhoT9l8V7s9iixl2xhp'
+const tokenLine = ''
 
 exports.register = async(req,res) => {
     try {
