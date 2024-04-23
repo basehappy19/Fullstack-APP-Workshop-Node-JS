@@ -11,6 +11,8 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
+import { toast } from 'react-toastify';
+
 
 import { Box, TextField, Button } from "@mui/material";
 
@@ -62,7 +64,7 @@ const FormProduct = () => {
   const handleRemove = async (id) => {
     remove(id)
       .then((res) => {
-        console.log(res);
+        toast.success("Delete : "+res.data.name + " Successfully")
         loadData();
       })
       .catch((err) => console.log(err));

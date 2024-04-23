@@ -18,6 +18,8 @@ import { login as loginRedux } from "../../store/userSlice";
 import { useSelector } from "react-redux";
 import { FaFacebook } from "react-icons/fa";
 import { BsLine } from "react-icons/bs";
+import { toast } from 'react-toastify';
+
 
 // Login Line
 import liff from "@line/liff";
@@ -73,7 +75,8 @@ export default function Login() {
       password: data.get("password"),
     };
     login(form)
-      .then((res) => {
+    .then((res) => {
+        toast.success("User : "+res.data.payload.user.name + " Login Successfully")
         dispatch(
           loginRedux({
             name: res.data.payload.user.name,
@@ -84,7 +87,7 @@ export default function Login() {
         localStorage.setItem("token", res.data.token);
         roleRedirects(res.data.payload.user.role);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => toast.error(err.response.data));
   };
 
   const roleRedirects = (role) => {

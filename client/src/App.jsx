@@ -29,6 +29,9 @@ import { currentUser } from "./functions/AuthFunction";
 import { useDispatch } from "react-redux";
 import { login } from "./store/userSlice";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
   const dispatch = useDispatch();
   const idToken = localStorage.getItem("token");
@@ -49,6 +52,7 @@ function App() {
     <BrowserRouter>
       <>
         <CssBaseline />
+        <ToastContainer />
 
         {/* Publish */}
 

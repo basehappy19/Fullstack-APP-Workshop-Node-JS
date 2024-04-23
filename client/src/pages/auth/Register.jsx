@@ -14,6 +14,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { register } from '../../functions/AuthFunction'
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
 
 function Copyright(props) {
   return (
@@ -36,6 +38,7 @@ const defaultTheme = createTheme();
 export default function Register() {
   const { user } = useSelector((state) => ({ ...state }));
   const navi = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -46,9 +49,10 @@ export default function Register() {
     }
     register(form)
     .then(res=>{
-        console.log(res);
+        toast.success(res.data)
     }).catch(err=>console.log(err))
   };
+
   const roleRedirects = (role) => {
     if (role === "admin") {
       navi("/admin/index");
