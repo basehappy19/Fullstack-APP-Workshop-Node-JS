@@ -55,7 +55,7 @@ export default function Login() {
   const dispatch = useDispatch();
   useEffect(() => {
     liff.init({
-      liffId: "2004703296-yQRd0reW",
+      liffId: "",
     });
   }, []);
 
